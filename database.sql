@@ -80,7 +80,6 @@ CREATE TABLE login_attempts (
     success TINYINT DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 CREATE TABLE login_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
