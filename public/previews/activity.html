@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity Log Preview</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+    <main class="content" style="max-width: 1100px; margin: 2rem auto;">
+        <div class="page-header">
+            <div>
+                <h1>Activity &amp; Amendment log</h1>
+                <p>Design preview rendered without backend data.</p>
+            </div>
+            <div class="badges">
+                <span class="badge">Total 42</span>
+                <span class="badge warning">Warnings 6</span>
+                <span class="badge danger">Critical 2</span>
+            </div>
+        </div>
+        <section class="card">
+            <h2>Filters</h2>
+            <form class="filter-grid">
+                <select><option>Any user</option></select>
+                <select><option>Any module</option></select>
+                <select><option>Any action</option></select>
+                <select><option>Any severity</option></select>
+                <label>From <input type="date"></label>
+                <label>To <input type="date"></label>
+                <input type="search" placeholder="Search description or payload">
+                <button class="btn" type="button">Apply</button>
+                <button class="btn ghost" type="button">Reset</button>
+            </form>
+        </section>
+        <section class="card">
+            <div class="table-actions">
+                <strong>Recent entries</strong>
+                <div class="inline">
+                    <button class="btn ghost" type="button">Export PDF</button>
+                    <button class="btn ghost" type="button">Export Excel</button>
+                </div>
+            </div>
+            <table class="data-table activity-table">
+                <thead>
+                    <tr>
+                        <th>Severity</th>
+                        <th>Time</th>
+                        <th>User</th>
+                        <th>Module</th>
+                        <th>Action</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="activity-alert-row">
+                        <td><span class="severity-pill severity-critical">CRITICAL</span> <span class="badge danger">Alert</span></td>
+                        <td>2023-08-10 14:02</td>
+                        <td>Owner</td>
+                        <td>lost_and_found</td>
+                        <td>release</td>
+                        <td>High value item released with recipient signature.</td>
+                        <td><span class="btn ghost">Inspect</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="severity-pill severity-warning">WARNING</span></td>
+                        <td>2023-08-10 10:12</td>
+                        <td>Sarah</td>
+                        <td>inventory</td>
+                        <td>movement</td>
+                        <td>Adjusted minibar stocktake variance.</td>
+                        <td><span class="btn ghost">Inspect</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="card activity-detail">
+            <h2>Entry #128 details</h2>
+            <p class="muted">Logged on 2023-08-10 14:02 from 10.0.0.5</p>
+            <div class="detail-grid">
+                <div><span class="muted">User</span><strong>Owner</strong></div>
+                <div><span class="muted">Module</span><strong>lost_and_found</strong></div>
+                <div><span class="muted">Action</span><strong>release</strong></div>
+                <div><span class="muted">Severity</span><span class="severity-pill severity-critical">CRITICAL</span></div>
+            </div>
+            <p>Item released to guest with both signatures captured.</p>
+            <p class="alert-callout">This entry triggered an alert for privileged users.</p>
+            <h3>Diff view</h3>
+            <div class="diff-grid">
+                <div class="diff-head">Field</div>
+                <div class="diff-head">Previous</div>
+                <div class="diff-head">New</div>
+                <div>lifecycle_state</div>
+                <div><code>pending_release</code></div>
+                <div><code>released</code></div>
+                <div>released_at</div>
+                <div><code>null</code></div>
+                <div><code>2023-08-10 14:02</code></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
