@@ -28,4 +28,15 @@ class Notifications
         $stmt->execute(['user' => $userId]);
         return (int)$stmt->fetchColumn();
     }
+
+    public function create(int $userId, string $message, ?string $link = null, string $type = 'info'): void
+    {
+        $stmt = $this->db->prepare('INSERT INTO notifications (user_id, message, link, type) VALUES (:user, :message, :link, :type)');
+        $stmt->execute([
+            'user' => $userId,
+            'message' => $message,
+            'link' => $link,
+            'type' => $type,
+        ]);
+    }
 }
